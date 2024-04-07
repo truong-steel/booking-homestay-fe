@@ -28,7 +28,7 @@
 .siTitle {
     font-size: 20px;
     color: #4c4c6c;
-
+    cursor: pointer;
 }
 .siDistance {
     font-size: 12px;

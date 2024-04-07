@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import { getAllRooms } from '../api/Api'
+import RoomCard from './RoomCard'
+import { RoomFilter } from '../common/RoomFilter'
+import { RoomPage } from '../common/RoomPage'
 
 
 const Room = () => {
@@ -44,9 +48,10 @@ const Room = () => {
 
 
   return (
-    <div className='roomContainer'>
+    <Container>
+        <div className='roomContainer'>
         <h1 className='text-center'>Find your next stay</h1> 
-        <h4 className='text-center'>Search low prices on hotels, homes and much more...</h4><br />
+        <h4 className='text-center'>Search low prices on homestays, cabins , villas and much more...</h4><br />
         <Row>
                 <Col md={6} className='mb-3 mb-md-0'>
                     <RoomFilter data={data} setFilterData={setFilteredData} />
@@ -61,6 +66,8 @@ const Room = () => {
                 </Col>
             </Row>
     </div>
+    </Container>
+    
   )
 }
 

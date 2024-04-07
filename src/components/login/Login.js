@@ -76,14 +76,18 @@ const Login = () => {
         <button className="btn-google" onClick={() => handleLogin('Google')}>
           Continue with Google
         </button>
+        
         <button className="btn-apple" onClick={() => handleLogin('Apple')}>
           Continue with Apple
         </button>
+        
         <button className="btn-facebook" onClick={() => handleLogin('Facebook')}>
           Continue with Facebook
         </button>
+        
       </div>
-        <p>Don't have account yet ? <Link to='/register'> Sign Up </Link></p>
+      <br/>
+        <p className='loginText'>Don't have account yet ? <Link to='/register'> Sign Up </Link></p>
         </div>
     </div>
     <MailList/>

@@ -1,13 +1,17 @@
 import React from 'react'
 import './PropertyList.css'
+import { useNavigate } from 'react-router-dom'
 
 const PropertyList = () => {
+    const navigate = useNavigate()
   return (
     <div className='pList'>
         <div className='pListItem'>
             <img src='https://www.googleapis.com/download/storage/v1/b/tourcdn/o/photos%2FMQDX8170V6_%2Ftmp%2Fplaytemp6913687968683672931%2FmultipartBody3185419425175880700asTemporaryFile?generation=1586803211156597&alt=media' 
             alt=''
-            className='pListImg'/>
+            className='pListImg'
+            onClick={() => navigate('/') }
+            />
             <div className='pListTitles'>
                 <h1>Homestays</h1>
                 <h2>234 Rooms</h2>

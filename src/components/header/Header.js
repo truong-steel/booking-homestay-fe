@@ -46,7 +46,7 @@ const Header = ({type}) => {
         <div className='headerList'>
             <div className='headerListItem active' onClick={() => navigate('/')}>
             <FontAwesomeIcon icon={faHouse}  />
-            <span>House</span>
+            <span>Home</span>
             </div>
             <div className='headerListItem'>
             <FontAwesomeIcon icon={faPlane} />
@@ -62,7 +62,7 @@ const Header = ({type}) => {
             </div>
             <div className='headerListItem' onClick={handleSearch}>
             <FontAwesomeIcon icon={faBed} />
-            <span>Rooms</span>
+            <span>Homestays</span>
             </div>
         </div>
         { type !== 'list' && 

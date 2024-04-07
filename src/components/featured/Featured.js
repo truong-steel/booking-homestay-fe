@@ -1,13 +1,16 @@
 import React from 'react'
 import './Featured.css'
+import { useNavigate } from 'react-router-dom'
 
 const Featured = () => {
+    const navigate = useNavigate()
   return (
     <div className='featured'>
         <div className='featuredItem'>
             <img 
             src={process.env.PUBLIC_URL + '/hanoi.jpg'} alt="hanoi"
-            className='featuredImg' />
+            className='featuredImg' 
+            />
             <div className='featuredTitles'>
                 <h1>Ha Noi</h1>
                 <h2>523 Properties</h2>

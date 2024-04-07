@@ -6,8 +6,12 @@ import MailList from '../mailList/MailList'
 import Footer from '../footer/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleArrowLeft, faCircleArrowRight, faCircleXmark, faLocation, faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { useLocation } from 'react-router-dom'
 
 const Homestay = () => {
+  const location = useLocation()
+  const id = location.pathname.split('/')[2]
+
   const [slideNumber , setSlideNumber] = useState(0)
   const [open , setOpen] = useState(false)
   const photos = [
@@ -62,6 +66,7 @@ const Homestay = () => {
           <div className='homestayAddress'>
             <FontAwesomeIcon icon={faLocationDot}/>
             <span>152 Xuan Dieu , Tay Ho , Ha Noi , Viet Nam</span>
+  
           </div>
           <span className='homestayDistance'>Near Flower Market - 4.1km from center</span>
             <span className='homestayPriceHighlight'>

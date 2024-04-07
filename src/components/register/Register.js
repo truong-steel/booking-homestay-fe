@@ -111,11 +111,14 @@ const Register = () => {
                 required value={register.username}
                 />
                 </div>
+                <br/>
                 
                  <button onClick={handleSignUp} type='submit' className="lButton">
               Login
             </button>
-                <p>Already have an account ? <Link to={"/login"}>Sign In</Link></p>
+            <br/>
+            
+                <p className='regText'>Already have an account ? <Link to={"/login"}>Sign In</Link></p>
                 
             </div>
         </div>

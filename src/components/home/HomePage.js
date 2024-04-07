@@ -10,6 +10,9 @@ import Footer from '../footer/Footer'
 import { useLocation } from 'react-router-dom'
 
 function HomePage() {
+  const location = useLocation()
+  const message = location.state && location.state.message
+  const currentUser = localStorage.getItem('userId')
 
   return (
     <section>

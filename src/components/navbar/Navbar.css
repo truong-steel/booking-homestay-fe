@@ -1,5 +1,5 @@
 .navbar {
-    height: 50;
+    
     background-color: #4c4c6c;
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@
   align-items: center;
   justify-content:space-between;
 }
-.logo{
+.lgo{
     font-weight: 500;
   }
 
