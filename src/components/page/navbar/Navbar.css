@@ -9,9 +9,7 @@
   width: 100%;
   max-width: 1024px;
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content:space-between;
+  position: relative;
 }
 .lgo{
     font-weight: 500;

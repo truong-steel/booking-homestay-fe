@@ -3,9 +3,9 @@ import './Login.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { signIn } from '../api/Api';
 import { AuthContext } from '../auth/AuthProvider';
-import Navbar from '../navbar/Navbar';
-import Footer from '../footer/Footer';
-import MailList from '../mailList/MailList';
+import Navbar from '../page/navbar/Navbar';
+import Footer from '../page/footer/Footer';
+import MailList from '../page/mailList/MailList';
 
 const Login = () => {
     const [errorMessage, setErrorMessage] = useState("")

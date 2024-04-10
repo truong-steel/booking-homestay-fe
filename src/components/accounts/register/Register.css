@@ -21,6 +21,10 @@
   .formLogin {
     margin-bottom: 15px;
   }
+  .text-noti {
+    text-align: center;
+    font-weight: 500;
+  }
   
   .loginInput{
     height: 30px;

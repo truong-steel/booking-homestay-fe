@@ -1,20 +1,21 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import  HomePage  from './components/home/HomePage'
+import  HomePage  from './components/page/home/HomePage'
 import './App.css'
-import List from './components/list/List'
-import Homestay from './components/homestay/Homestay'
-import Register from './components/register/Register'
-import Login from './components/login/Login'
+import List from './components/page/list/List'
+import Homestay from './components/page/homestay/Homestay'
+import Register from './components/accounts/register/Register'
+import ManagerReg from './components/accounts/register/ManagerReg'
+import Login from './components/accounts/Login'
 import { AuthProvider } from './components/auth/AuthProvider'
 import ExistingRoom from './components/room/ExistingRoom'
 import AddRoom from './components/room/AddRoom'
 import EditRoom from './components/room/EditRoom'
 import RoomListing from './components/room/RoomListing'
 import Profile from './components/auth/Profile'
-import Admin from './components/admin/Admin'
+import Admin from './components/accounts/admin/Admin'
 import { Logout } from './components/auth/Logout'
-import Manager from './components/manager/Manager'
+import Manager from './components/accounts/manager/Manager'
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
 
 
         <Route path='/register' element={<Register/>}/>
+        <Route path='/manager-register' element={<ManagerReg/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path = '/' element = {<Logout/>}/>
         <Route path='/profile' element={<Profile/>} />

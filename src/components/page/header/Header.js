@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from 'date-fns'
-import { AuthContext } from '../auth/AuthProvider'
+import { AuthContext } from '../../auth/AuthProvider'
 
 const Header = ({type}) => {
     
@@ -40,6 +40,8 @@ const Header = ({type}) => {
       const handleSearch = () => {
         navigate('/homestays', {state:{destination,date,options}})
       }
+      const isLoggedIn = localStorage.getItem('token')
+      const currentUser = localStorage.getItem('userId')
   return (
     <div className='header'>
         <div className={type === 'list' ? 'headerContainer listMode' : 'headerContainer'}>
@@ -67,15 +69,20 @@ const Header = ({type}) => {
         </div>
         { type !== 'list' && 
         <>
-        <h1 className='headerTitle'>Looking for something private ?</h1>
-        <p className='headerDesc'>
-            Sign in and start booking now !
-        </p>
-
-        { !user &&
+        { isLoggedIn ? (
+            <>
+        <h3> Welcome {currentUser} </h3>
+        <h4>Let's find your place !</h4>
+            </>
+         ) : (
+            <>
+            <h1 className='headerTitle'>Looking for something private ?</h1>
+            <h2> Sign in and start booking now ! </h2>
+            <br/>
             <button className='headerBtn'
             onClick={() => navigate('/register')}> Sign In / Register 
-            </button> 
+            </button>
+            </>  )
         }
         
         

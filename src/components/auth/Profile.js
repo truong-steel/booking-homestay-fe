@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { deleteUser, getBookingsByUserId, getUser } from '../api/Api'
 import moment from 'moment'
+import Navbar from '../page/navbar/Navbar'
 
 const Profile = () => {
     const [user , setUser] = useState({
@@ -77,6 +78,8 @@ const Profile = () => {
     }
 
   return (
+    <>
+    <Navbar/>
     <div className='container'>
         {errorMessage && <p className="text-danger">{errorMessage}</p>}
             {message && <p className="text-danger">{message}</p>}
@@ -202,6 +205,8 @@ const Profile = () => {
                 <p>Loading user data...</p>
             )}
     </div>
+    </>
+    
   )
 }
 

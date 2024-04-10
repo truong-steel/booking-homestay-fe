@@ -7,7 +7,7 @@ import { format } from 'date-fns'
 import { DateRange } from 'react-date-range'
 import SearchItem from '../searchItem/SearchItem'
 import axios from 'axios'
-import useFetch from '../api/useFetch'
+import useFetch from '../../api/useFetch'
 
 const List = () => {
   const location = useLocation()

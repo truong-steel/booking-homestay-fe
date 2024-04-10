@@ -42,6 +42,14 @@ export async function getAllRooms() {
         throw new Error("Error fetching rooms")
     }
 }
+export async function getAllHomestays() {
+    try {
+        const res = await api.get("/homestays")
+        return res.data
+    } catch (error) {
+        throw new Error("Error fetching homestays")
+    }
+}
 
 export async function deleteRoom(roomId) {
     try {
@@ -89,6 +97,19 @@ export async function signIn(login) {
 export async function signUp(dataReq) {
     try {
         const response = await api.post('/auth/register-user', dataReq)
+        return response.data
+    } catch (error) {
+        if (error.response && error.response.data) {
+            throw new Error(error.response.data)
+        } else {
+            throw new Error(`Error ${error.message}`)
+        }
+    }
+}
+
+export async function managerSignUp(dataReq) {
+    try {
+        const response = await api.post('/auth/register-manager', dataReq)
         return response.data
     } catch (error) {
         if (error.response && error.response.data) {

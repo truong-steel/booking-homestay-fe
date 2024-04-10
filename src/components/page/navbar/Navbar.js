@@ -1,8 +1,8 @@
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './Navbar.css'
 import { useContext, useState } from 'react'
-import { AuthContext } from '../auth/AuthProvider'
-import { Logout } from '../auth/Logout'
+import { AuthContext } from '../../auth/AuthProvider'
+import { Logout } from '../../auth/Logout'
 
 const Navbar = () => {
   const navigate = useNavigate()
@@ -21,7 +21,8 @@ const Navbar = () => {
 	const userRole = localStorage.getItem("userRole")
 
   return (
-    <nav className='navbar navbar-expand-lg bg-body-tertiary px-5 shadow sticky-top'>
+    
+        <nav className='navbar navbar-expand-lg bg-body-tertiary px-5 shadow sticky-top'>
             <div className='container-fluid'>
                 <Link to={"/"} className='navbar-brand'>
                     <span className='hotel-color'> Homestay Booking </span>
@@ -47,6 +48,9 @@ const Navbar = () => {
 
                     </ul>
                     <ul className='d-flex navbar-nav'>
+                    <li className='nav-item'>
+                            <NavLink className='nav-link' to={"/manager-register"}>Become A Host</NavLink>
+                        </li>
                         <li className='nav-item'>
                             <NavLink className='nav-link' to={"/find-booking"}>Find My Booking</NavLink>
                         </li>
@@ -77,6 +81,8 @@ const Navbar = () => {
                 </div>
             </div>
         </nav>
+    
+    
   )
 }
 

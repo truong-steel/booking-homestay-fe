@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import './Register.css'
 import { Form, Input, Modal } from 'antd'
-import { signUp } from '../api/Api'
+import { signUp } from '../../api/Api'
 import { Link } from 'react-router-dom'
-import Navbar from '../navbar/Navbar'
-import MailList from '../mailList/MailList'
-import Footer from '../footer/Footer'
+import Navbar from '../../page/navbar/Navbar'
+import MailList from '../../page/mailList/MailList'
+import Footer from '../../page/footer/Footer'
+
 
 const Register = () => {
     const [register , setRegister] = useState({
@@ -53,10 +54,13 @@ const Register = () => {
         <section>
             {errorMessage && <p className='alert alert-danger'>{errorMessage}</p>}
             {successMessage && <p className='alert alert-success'>{successMessage}</p>}
+            <div className='text-noti'>
             <h1>Register Success!</h1>
             <p>
                 <Link to={"/login"}>Sign In</Link>
             </p>
+            </div>
+            
         </section>
     ) : ( 
         <section>
@@ -114,7 +118,7 @@ const Register = () => {
                 <br/>
                 
                  <button onClick={handleSignUp} type='submit' className="lButton">
-              Login
+              Sign Up
             </button>
             <br/>
             
