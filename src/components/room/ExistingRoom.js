@@ -16,6 +16,7 @@ const ExistingRoom = () => {
     const [selectRoomType, setSelectRoomType] = useState("");
     const [successMsg, setSuccessMsg] = useState("");
     const [errorMes, setErrorMsg] = useState("");
+    const currentUser = localStorage.getItem('userId')
 
     useEffect(() => {
         fetRooms()
@@ -85,7 +86,8 @@ const ExistingRoom = () => {
         ) : (
             <>
                 <div className='mt-5 mb-5 container'>
-                    <h3 className='text-center mb-5 mt-5'>Manage Rooms</h3>
+                    <h3 className='text-center mb-5 mt-5'>Homestay Details</h3>
+                    <h4 className='text-center mb-5 mt-5'>Welcome to {currentUser} homestay</h4>
                     <Link to={"/add-room"}>
                         <FontAwesomeIcon icon={faPlus}/>Add New Room
                     </Link> <br /><br />

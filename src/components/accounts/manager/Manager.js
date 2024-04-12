@@ -16,11 +16,7 @@ const Manager = () => {
         <hr/>
         <Link to={'/'}>Home</Link>
         <br/>
-        <Link to={'/add-room'}>Add Room</Link>
-        <br/>
-        <Link to={'/edit-room/:roomId'}>Edit Room</Link>
-        <br/>
-        <Link to={'/all-rooms'}>Your Room List</Link>
+        <Link to={'/all-homestays'}>Your Homestays List</Link>
         </section>
     <MailList/>
         <Footer/>

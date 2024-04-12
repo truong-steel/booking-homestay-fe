@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { addNewRoom } from '../api/Api';
 import RoomTypeSelector from '../common/RoomTypeSelector';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
+
 
 const AddRoom = () => {
     const [newRoom, setNewRoom] = useState({
@@ -9,6 +10,7 @@ const AddRoom = () => {
         roomType: "",
         roomPrice: ""
     })
+    const navigate = useNavigate()
 
     const [imagePreview, setImagePreview] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
@@ -33,7 +35,7 @@ const AddRoom = () => {
         setNewRoom({ ...newRoom, image: selectedImage })
         setImagePreview(URL.createObjectURL(selectedImage))
     }
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
@@ -43,6 +45,7 @@ const AddRoom = () => {
                 setNewRoom({ image: null, roomType: "", roomPrice: "" })
                 setImagePreview("")
                 setErrorMessage("")
+                navigate('/all-rooms')
             } else {
                 setErrorMessage("Error adding room")
             }

@@ -62,7 +62,7 @@ const Header = ({type}) => {
             <FontAwesomeIcon icon={faMotorcycle} />
             <span>Motobike Rentals</span>
             </div>
-            <div className='headerListItem' onClick={handleSearch}>
+            <div className='headerListItem' onClick={() => navigate('/all-homestays')}>
             <FontAwesomeIcon icon={faBed} />
             <span>Homestays</span>
             </div>

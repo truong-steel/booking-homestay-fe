@@ -16,6 +16,9 @@ import Profile from './components/auth/Profile'
 import Admin from './components/accounts/admin/Admin'
 import { Logout } from './components/auth/Logout'
 import Manager from './components/accounts/manager/Manager'
+import AccountList from './components/accounts/accountList/AccountList'
+import HomestayList from './components/page/homestay/HomestayList'
+import EditHomestay from './components/page/homestay/EditHomestay'
 
 function App() {
   return (
@@ -26,22 +29,24 @@ function App() {
 
         <Route path='/homestays' element={<List/>}/>
         <Route path='/homestays/:id' element={<Homestay/>}/>
+        <Route path='/all-homestays' element={<HomestayList/>}/>
+        <Route path='/edit-homestay/:homestayId' element = {<EditHomestay/>} />
         
-
         <Route path='/rooms' element = {<ExistingRoom/>}/>
         <Route path='/add-room' element = {<AddRoom/>} />
         <Route path='/edit-room/:roomId' element = {<EditRoom/>} />
         <Route path='/all-rooms' element ={<RoomListing/>} />
 
-
-
         <Route path='/register' element={<Register/>}/>
         <Route path='/manager-register' element={<ManagerReg/>}/>
+
         <Route path='/login' element={<Login/>}/>
         <Route path = '/' element = {<Logout/>}/>
+
         <Route path='/profile' element={<Profile/>} />
         <Route path='/admin' element={<Admin/>}/>
         <Route path='/manager' element={<Manager/>}/>
+        <Route path = '/accounts' element = {<AccountList/>}/>
         
       </Routes>
     

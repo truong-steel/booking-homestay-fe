@@ -12,6 +12,7 @@ export const getHearder = () => {
     }
 }
 export async function addNewRoom ( image , roomType , roomPrice ) {
+    // const homestayId = req.params.homestayId
     const formData = new FormData()
     formData.append('image' , image)
     formData.append("roomType", roomType)
@@ -42,9 +43,10 @@ export async function getAllRooms() {
         throw new Error("Error fetching rooms")
     }
 }
+
 export async function getAllHomestays() {
     try {
-        const res = await api.get("/homestays")
+        const res = await api.get("/homestays/all")
         return res.data
     } catch (error) {
         throw new Error("Error fetching homestays")
@@ -70,6 +72,16 @@ export async function updateRoom(roomId, roomData) {
     return res
 }
 
+export async function updateHomestay(homestayId, homestayData) {
+    const formData = new FormData()
+    formData.append("homestayAddress", homestayData.homestayAddress)
+    formData.append("homestayName", homestayData.homestayName)
+    formData.append("image", homestayData.image)
+
+    const res = await api.put(`/homestays/update/${homestayId}`, formData)
+    return res
+}
+
 export async function getRoomById(roomId) {
     try {
         const result = await api.get(`/rooms/room/${roomId}`)
@@ -78,6 +90,16 @@ export async function getRoomById(roomId) {
         throw new Error(`Error fetching room ${error.message}`)
     }
 }
+
+export async function getHomestayById(homestayId) {
+    try {
+        const result = await api.get(`/homestays/homestay/${homestayId}`)
+        return result.data
+    } catch (error) {
+        throw new Error(`Error fetching homestay ${error.message}`)
+    }
+}
+
 
 
 export async function signIn(login) {
