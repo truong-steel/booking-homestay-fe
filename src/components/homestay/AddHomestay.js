@@ -45,7 +45,7 @@ const AddRoom = () => {
                 setNewRoom({ image: null, roomType: "", roomPrice: "" })
                 setImagePreview("")
                 setErrorMessage("")
-                navigate('/manager')
+                navigate('/all-rooms')
             } else {
                 setErrorMessage("Error adding room")
             }
@@ -96,7 +96,7 @@ const AddRoom = () => {
                                 <button type='submit' className='btn btn-outline-success'>
                                     Submit
                                 </button>
-                                <Link to={"/manager"} className='btn btn-outline-danger ml-5'>Cancel</Link>
+                                <Link to={"/rooms"} className='btn btn-outline-danger ml-5'>Cancel</Link>
                             </div>
                         </form>
                     </div>

@@ -9,6 +9,7 @@
 .homeTitle {
     width: 1024px;
     font-size: 20px;
+    cursor: pointer;
 }
 .text {
     align-items: flex-end;

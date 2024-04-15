@@ -14,6 +14,7 @@ const Featured = () => {
             'Loading . . .'
         ) : (
             <>
+            
                 <div className='featuredItem'>
             <img 
             src={process.env.PUBLIC_URL + '/hanoi.jpg'} alt="hanoi"

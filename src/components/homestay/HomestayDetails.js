@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './Homestay.css'
 import Navbar from '../navbar/Navbar'
 import Header from '../header/Header'
 import MailList from '../mailList/MailList'

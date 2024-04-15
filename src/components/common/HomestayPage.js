@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const RoomPage = ({currentPage, totalPages, onPageChange}) => {
+export const HomestayPage = ({currentPage, totalPages, onPageChange}) => {
     const pageNumbers = Array.from({length: totalPages}, (_, i) => i + 1)
   return (
     <nav>

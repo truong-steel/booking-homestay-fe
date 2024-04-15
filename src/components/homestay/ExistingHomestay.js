@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { deleteRoom, getAllRooms } from '../api/Api';
+import { deleteHomestay, getAllHomestays } from '../api/Api';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faPlus, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Col } from 'react-bootstrap';
-import { RoomFilter } from '../common/RoomFilter';
-import { RoomPage } from '../common/RoomPage';
+import { RoomFilter } from '../common/HomestayFilter';
+import { RoomPage } from '../common/HomestayPage';
 
-const ExistingRoom = () => {
-    const [rooms, setRooms] = useState([]);
+const ExistingHomestay = () => {
+    const [homestays, setHomestays] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [roomPerPage] = useState(5);
+    const [homestayPerPage] = useState(5);
     const [isLoading, setIsLoading] = useState(false);
     const [filterRooms, setFilterRoom] = useState([]);
     const [selectRoomType, setSelectRoomType] = useState("");
@@ -112,7 +112,7 @@ const ExistingRoom = () => {
                                         <td>{room.roomType}</td>
                                         <td>${room.roomPrice}</td>
                                         <td>
-                                        <img src={`${room.image}`} style={{maxWidth: '100px', maxHeight: '100px'}} className='mb-3' alt="Room Image" />
+                                        <img src={`data:image/*;base64, ${room.image}`} style={{maxWidth: '100px', maxHeight: '100px'}} className='mb-3' alt="Room Image" />
                                         </td>
                                         <td className='gap-2'>
                                             <Link to={`/edit-room/${room.id}`}>
@@ -136,4 +136,4 @@ const ExistingRoom = () => {
   )
 }
 
-export default ExistingRoom
+export default ExistingHomestay
